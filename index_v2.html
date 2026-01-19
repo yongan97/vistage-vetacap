@@ -680,25 +680,120 @@
             opacity: 1;
         }
 
-        /* PRINT */
-        .print-btn {
+        /* MODE TOGGLE */
+        .mode-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
             background: var(--verde-acento);
             color: var(--blanco);
             border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             cursor: pointer;
-            font-family: inherit;
-            font-size: 10pt;
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0 4px 15px rgba(0,198,0,0.3);
+            z-index: 1000;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .mode-toggle:hover {
+            background: #00a800;
+            transform: scale(1.1);
+        }
+
+        .mode-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--blanco);
+        }
+
+        /* SLIDE MODE */
+        body.slide-mode {
+            overflow: hidden;
+        }
+
+        body.slide-mode .hero,
+        body.slide-mode .section {
+            min-height: 100vh;
+            display: none;
+            overflow-y: auto;
+        }
+
+        body.slide-mode .hero.active-slide,
+        body.slide-mode .section.active-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        body.slide-mode .section.active-slide {
+            display: block;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        body.slide-mode .footer {
+            display: none;
+        }
+
+        /* SLIDE NAVIGATION */
+        .slide-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            align-items: center;
+            gap: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px 25px;
+            border-radius: 50px;
             z-index: 1000;
         }
 
-        .print-btn:hover { background: #00a800; }
+        body.slide-mode .slide-nav {
+            display: flex;
+        }
+
+        .slide-nav button {
+            background: var(--verde-acento);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .slide-nav button:hover {
+            transform: scale(1.1);
+        }
+
+        .slide-nav button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+
+        .slide-nav button svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .slide-counter {
+            color: white;
+            font-size: 14pt;
+            font-weight: 600;
+            min-width: 60px;
+            text-align: center;
+        }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -715,13 +810,28 @@
         }
 
         @media print {
-            .print-btn { display: none; }
+            .mode-toggle, .slide-nav { display: none !important; }
             .section { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
-    <button class="print-btn" onclick="window.print()">Guardar como PDF</button>
+    <!-- Toggle Mode Button -->
+    <button class="mode-toggle" onclick="toggleMode()" title="Cambiar a modo diapositivas">
+        <svg class="icon-slides" viewBox="0 0 24 24"><path d="M10 8v8l5-4-5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
+        <svg class="icon-scroll" style="display:none" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/><path d="M4 4h16v2H4zm0 14h16v2H4z"/></svg>
+    </button>
+
+    <!-- Slide Navigation -->
+    <div class="slide-nav">
+        <button onclick="prevSlide()" id="prevBtn">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">11</span></span>
+        <button onclick="nextSlide()" id="nextBtn">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+    </div>
 
     <!-- HERO -->
     <div class="hero">
@@ -1189,6 +1299,79 @@
         <p>Av. Jerónimo Salguero 2745, Piso 3 · CABA, Argentina</p>
         <p class="tagline">EL FOCO ESTÁ EN VOS</p>
     </div>
+
+    <script>
+        let isSlideMode = false;
+        let currentSlideIndex = 0;
+        let slides = [];
+
+        function initSlides() {
+            slides = [document.querySelector('.hero'), ...document.querySelectorAll('.section')];
+            document.getElementById('totalSlides').textContent = slides.length;
+        }
+
+        function toggleMode() {
+            isSlideMode = !isSlideMode;
+            const body = document.body;
+            const iconSlides = document.querySelector('.icon-slides');
+            const iconScroll = document.querySelector('.icon-scroll');
+            const toggleBtn = document.querySelector('.mode-toggle');
+
+            if (isSlideMode) {
+                body.classList.add('slide-mode');
+                iconSlides.style.display = 'none';
+                iconScroll.style.display = 'block';
+                toggleBtn.title = 'Cambiar a modo scroll';
+                currentSlideIndex = 0;
+                showSlide(currentSlideIndex);
+            } else {
+                body.classList.remove('slide-mode');
+                iconSlides.style.display = 'block';
+                iconScroll.style.display = 'none';
+                toggleBtn.title = 'Cambiar a modo diapositivas';
+                slides.forEach(s => s.classList.remove('active-slide'));
+            }
+        }
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active-slide'));
+            slides[index].classList.add('active-slide');
+            document.getElementById('currentSlide').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === slides.length - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!isSlideMode) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Escape') {
+                toggleMode();
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initSlides);
+    </script>
 
 </body>
 </html>
