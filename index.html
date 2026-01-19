@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetacap - Presentacion Vistage | Lucas Calderoni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-principal: #1036E2;
+            --verde-acento: #00C600;
+            --azul-oscuro: #021751;
+            --blanco: #FFFFFF;
+            --negro: #000000;
+            --gris-claro: #f5f7fa;
+            --gris-medio: #e1e5eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: var(--negro);
+            background: var(--blanco);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        /* HERO / PORTADA */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, var(--blanco) 0%, var(--gris-claro) 100%);
+            padding: 20px 20px;
+        }
+
+        .cover-logo {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 15px;
+        }
+
+        .cover-presenter {
+            font-size: 18pt;
+            color: var(--azul-oscuro);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .cover-presenter strong {
+            color: var(--azul-principal);
+            font-weight: 700;
+        }
+
+        /* SECCIONES */
+        .section {
+            padding: 40px 40px;
+            border-bottom: 1px solid var(--gris-medio);
+        }
+
+        .section-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--azul-principal);
+            color: var(--blanco);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 14pt;
+            margin-right: 12px;
+        }
+
+        .section h2 {
+            color: var(--azul-principal);
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--verde-acento);
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3 { color: var(--azul-oscuro); font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; }
+        .section h4 { color: var(--azul-principal); font-size: 11pt; font-weight: 600; margin: 15px 0 8px 0; }
+        .section p { margin-bottom: 10px; text-align: justify; font-size: 11pt; }
+
+        /* INFO BOX */
+        .info-box {
+            background: var(--gris-claro);
+            border-left: 4px solid var(--azul-principal);
+            padding: 12px 18px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box.verde { border-left-color: var(--verde-acento); }
+
+        .info-box.destacado {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            color: var(--blanco);
+            border-left: none;
+            border-radius: 8px;
+        }
+
+        .info-box.destacado h4 { color: var(--verde-acento); }
+        .info-box h4 { margin-top: 0; margin-bottom: 8px; }
+
+        /* METRICAS */
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .metrics-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .metrics-row.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .metric-card {
+            background: var(--blanco);
+            border: 2px solid var(--gris-medio);
+            border-radius: 10px;
+            padding: 15px 12px;
+            text-align: center;
+        }
+
+        .metric-card.highlight { border-color: var(--verde-acento); background: linear-gradient(180deg, #f0fff0 0%, var(--blanco) 100%); }
+        .metric-value { font-size: 22pt; font-weight: 800; color: var(--azul-principal); line-height: 1; margin-bottom: 6px; }
+        .metric-card.highlight .metric-value { color: var(--verde-acento); }
+        .metric-label { font-size: 9pt; color: var(--azul-oscuro); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* TABLAS */
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10pt; }
+        th { background: var(--azul-principal); color: var(--blanco); padding: 10px 10px; text-align: left; font-weight: 600; }
+        td { padding: 8px 10px; border-bottom: 1px solid var(--gris-medio); vertical-align: top; }
+        tr:nth-child(even) { background: var(--gris-claro); }
+
+        /* LISTAS */
+        ul, ol { margin: 10px 0 10px 25px; }
+        li { margin-bottom: 6px; font-size: 11pt; }
+
+        /* UNIDADES DE NEGOCIO CARDS */
+        .business-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .business-card {
+            background: var(--gris-claro);
+            border-radius: 10px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .business-card-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .business-card-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--blanco);
+        }
+
+        .business-card-content {
+            flex: 1;
+        }
+
+        .business-card h4 {
+            color: var(--azul-principal);
+            font-size: 12pt;
+            margin: 0 0 4px 0;
+            font-weight: 700;
+        }
+
+        .business-card p {
+            font-size: 10pt;
+            color: #555;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ESTRUCTURA ORG */
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .org-card {
+            background: var(--gris-claro);
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 180px;
+        }
+
+        .org-card.directivo {
+            background: linear-gradient(145deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            color: var(--blanco);
+            box-shadow: 0 4px 15px rgba(16, 54, 226, 0.25);
+        }
+
+        .org-card-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .org-card h4 {
+            font-size: 13pt;
+            margin: 0 0 6px 0;
+            font-weight: 700;
+        }
+
+        .org-card.directivo h4 { color: var(--blanco); }
+
+        .org-card p {
+            font-size: 9pt;
+            margin: 0;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .org-card.directivo p { color: var(--verde-acento); font-weight: 500; }
+
+        /* COMPORTAMIENTOS / PROPUESTA DE VALOR */
+        .propuesta-hero {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            color: var(--blanco);
+            border-radius: 10px;
+            padding: 25px 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .propuesta-hero h3 {
+            color: var(--verde-acento);
+            font-size: 11pt;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .propuesta-hero p {
+            font-size: 15pt;
+            font-weight: 500;
+            line-height: 1.4;
+            margin: 0;
+            text-align: center;
+        }
+
+        .pilares-container {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .pilares-title {
+            color: var(--verde-acento);
+            font-size: 11pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .pilares {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .pilar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .pilar:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        .pilar-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 12px;
+            background: var(--verde-acento);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pilar-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--blanco);
+        }
+
+        .pilar h4 {
+            color: var(--blanco);
+            font-size: 10pt;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .pilar p {
+            color: rgba(255,255,255,0.75);
+            font-size: 8pt;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .tagline-final {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .tagline-final p {
+            color: var(--blanco);
+            font-size: 16pt;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .tagline-final span {
+            color: var(--verde-acento);
+        }
+
+        /* PROCESO COMERCIAL */
+        .proceso-container {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .proceso-title {
+            color: var(--verde-acento);
+            font-size: 11pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .proceso-subtitle {
+            color: var(--blanco);
+            font-size: 14pt;
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .proceso-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .proceso-timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 40px;
+            right: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--verde-acento) 0%, rgba(255,255,255,0.3) 100%);
+            z-index: 0;
+        }
+
+        .proceso-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .proceso-step-num {
+            width: 50px;
+            height: 50px;
+            background: var(--verde-acento);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(0, 198, 0, 0.4);
+        }
+
+        .proceso-step-num svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--blanco);
+        }
+
+        .proceso-step h4 {
+            color: var(--blanco);
+            font-size: 10pt;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            line-height: 1.2;
+        }
+
+        .proceso-step p {
+            color: rgba(255,255,255,0.7);
+            font-size: 8pt;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .proceso-arrow {
+            position: absolute;
+            top: 22px;
+            right: -15px;
+            color: var(--verde-acento);
+            font-size: 14pt;
+        }
+
+        @media (max-width: 768px) {
+            .proceso-timeline {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            .proceso-timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                right: auto;
+                width: 3px;
+                height: auto;
+                transform: translateX(-50%);
+            }
+            .proceso-step {
+                max-width: 200px;
+            }
+        }
+
+        /* ARQUETIPO CLIENTE */
+        .arquetipo-container {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .arquetipo-title {
+            color: var(--verde-acento);
+            font-size: 11pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .arquetipo-subtitle {
+            color: var(--blanco);
+            font-size: 16pt;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .arquetipo-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .arquetipo-avatar {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: var(--verde-acento);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arquetipo-avatar svg {
+            width: 45px;
+            height: 45px;
+            fill: var(--blanco);
+        }
+
+        .arquetipo-info {
+            flex: 1;
+        }
+
+        .arquetipo-info h4 {
+            color: var(--blanco);
+            font-size: 14pt;
+            margin: 0 0 5px 0;
+        }
+
+        .arquetipo-info .arquetipo-desc {
+            color: var(--verde-acento);
+            font-size: 10pt;
+            margin: 0 0 15px 0;
+            font-weight: 500;
+        }
+
+        .arquetipo-servicios {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .arquetipo-servicio {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .arquetipo-servicio h5 {
+            color: var(--verde-acento);
+            font-size: 9pt;
+            text-transform: uppercase;
+            margin: 0 0 8px 0;
+            letter-spacing: 1px;
+        }
+
+        .arquetipo-servicio ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .arquetipo-servicio li {
+            color: rgba(255,255,255,0.85);
+            font-size: 9pt;
+            margin-bottom: 4px;
+        }
+
+        .arquetipo-beneficio {
+            background: var(--verde-acento);
+            color: var(--blanco);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .arquetipo-beneficio p {
+            margin: 0;
+            font-size: 11pt;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .arquetipo-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .arquetipo-servicios {
+                flex-direction: column;
+            }
+        }
+
+        /* PRINT BUTTON */
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--verde-acento);
+            color: var(--blanco);
+            border: none;
+            padding: 14px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 198, 0, 0.35);
+            z-index: 1000;
+        }
+
+        .print-btn:hover { background: #00a800; }
+
+        /* FOOTER */
+        .footer {
+            padding: 30px 40px;
+            text-align: center;
+            background: var(--gris-claro);
+        }
+
+        .footer-logo { height: 40px; margin-bottom: 12px; }
+        .footer p { font-size: 9pt; color: #666; margin: 4px 0; }
+        .footer .slogan-footer { color: var(--verde-acento); font-weight: 700; font-size: 12pt; margin-top: 12px; }
+
+        /* LINK */
+        a { color: var(--azul-principal); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .metrics-row, .metrics-row.cols-3, .business-cards, .org-grid {
+                grid-template-columns: 1fr;
+            }
+            .pilares {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pilares-container {
+                padding: 20px 15px;
+            }
+            .cover-logo { width: 85%; }
+            .cover-presenter { font-size: 14pt; }
+            .section h2 { font-size: 16pt; }
+            .section { padding: 30px 20px; }
+            .cover-page { padding: 30px 20px; }
+            .propuesta-hero p { font-size: 13pt; }
+        }
+
+        @media print {
+            .print-btn { display: none; }
+            .section { page-break-inside: avoid; border-bottom: none; }
+            .cover-page { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Guardar como PDF</button>
+
+    <!-- SLIDE 1: HERO -->
+    <div class="cover-page">
+        <svg class="cover-logo" viewBox="0 0 841.89 595.28" xmlns="http://www.w3.org/2000/svg">
+            <defs><style>.st0{fill:#00c600}.st1{fill:#1036e2}</style></defs>
+            <path class="st1" d="M247.78,242.66l14.53,31.53,14.47-31.53h14.58l-29.17,60.01-28.94-60.01h14.53Z"/>
+            <path class="st1" d="M442.07,298.8l-14.53-31.53-14.47,31.53h-14.58l29.17-60.01,28.94,60.01h-14.53Z"/>
+            <path class="st0" d="M413.81,316.91l13.85-28.49,13.74,28.49h-27.59Z"/>
+            <path class="st1" d="M349.24,273.78h-40.24c.35,4.61,1.84,8.28,4.5,11.01,2.65,2.69,6.05,4.04,10.2,4.04,3.23,0,5.9-.77,8.01-2.31,2.08-1.54,4.44-4.38,7.09-8.53l10.95,6.11c-1.69,2.88-3.48,5.35-5.36,7.41-1.88,2.06-3.9,3.75-6.05,5.07-2.15,1.33-4.48,2.3-6.98,2.91-2.5.61-5.21.92-8.13.92-8.38,0-15.1-2.69-20.18-8.07-5.07-5.42-7.61-12.6-7.61-21.56s2.46-16.06,7.38-21.56c4.96-5.42,11.53-8.13,19.72-8.13s14.8,2.63,19.6,7.9c4.77,5.23,7.15,12.47,7.15,21.73l-.06,3.06ZM335.92,263.18c-1.81-6.92-6.17-10.38-13.09-10.38-1.58,0-3.06.24-4.44.72-1.38.48-2.64,1.17-3.78,2.08-1.13.9-2.1,1.99-2.91,3.26s-1.42,2.71-1.84,4.32h26.06Z"/>
+            <path class="st1" d="M383.14,254.76v44.04h-12.97v-44.04h-15.1v-12.11h43.42v12.11h-15.35Z"/>
+            <path class="st1" d="M585.61,275.98v22.81h-8.48v-56.17h9.6c4.71,0,8.26.33,10.66.98,2.42.65,4.56,1.89,6.4,3.71,3.22,3.15,4.84,7.13,4.84,11.93,0,5.14-1.72,9.22-5.17,12.22-3.44,3.01-8.09,4.51-13.93,4.51h-3.93ZM585.61,268.13h3.16c7.78,0,11.68-2.99,11.68-8.99s-4.01-8.69-12.04-8.69h-2.8v17.68Z"/>
+            <path class="st1" d="M510.23,249.18l-5.76,5.68c-4.96-4.15-10.09-6.22-15.4-6.22-5.84,0-10.77,2.1-14.77,6.3-4.03,4.17-6.04,9.28-6.04,15.32s2.01,11,6.04,15.1c4.03,4.1,8.96,6.15,14.81,6.15,3.02,0,5.59-.49,7.7-1.47,1.18-.49,2.4-1.15,3.66-1.99,1.27-.83,2.6-1.84,4-3.02l5.97,5.78c-5.68,4.64-10.95,8.73-21.44,8.73-8.13,0-15.06-2.84-20.81-8.51-5.72-5.72-8.58-12.62-8.58-20.7,0-7.24,2.39-13.7,7.18-19.37,5.89-6.95,13.52-10.42,22.87-10.42,8.28,0,15.9,4.09,20.57,8.65Z"/>
+            <path class="st1" d="M552.68,284.99h-24.34l-6.33,13.81h-9.24l28.14-60.44,27.14,60.44h-9.39l-5.97-13.81ZM549.18,276.93l-8.43-19.34-8.84,19.34h17.27Z"/>
+        </svg>
+        <p class="cover-presenter"><strong>Lucas Calderoni</strong> | Socio Vetacap</p>
+    </div>
+
+    <!-- SLIDE 2: SOBRE LUCAS CALDERONI -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">1</span>Sobre Lucas Calderoni</h2>
+
+            <div class="info-box destacado">
+                <h4>Socio de Vetacap</h4>
+                <p>Responsable de multiples areas estrategicas dentro de la organizacion, combinando vision de negocio con expertise tecnico en mercados financieros.</p>
+            </div>
+
+            <h3>Roles y Responsabilidades</h3>
+            <div class="metrics-row cols-2">
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">Head Trader</div>
+                    <div class="metric-label">Operaciones de mercado</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">Head Research</div>
+                    <div class="metric-label">Analisis e investigacion</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">Head FCI</div>
+                    <div class="metric-label">Fondos Comunes de Inversion</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">Operaciones</div>
+                    <div class="metric-label">Responsable operativo</div>
+                </div>
+            </div>
+
+            <div class="info-box verde">
+                <h4>Contacto</h4>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lucas-calderoni-socio-vetacap" target="_blank">linkedin.com/in/lucas-calderoni-socio-vetacap</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: QUE ES VETACAP -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">2</span>Que es Vetacap</h2>
+
+            <div class="info-box destacado">
+                <h4>La ALyC de la economía real</h4>
+                <p>Sociedad de Bolsa argentina especializada en gestión patrimonial y asesoría de inversiones. <strong>Nuestros socios vienen de la economía real</strong>, con años de experiencia acompañando empresas y personas en sus decisiones financieras.</p>
+            </div>
+
+            <div class="metrics-row cols-3">
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">CNV ALyC</div>
+                    <div class="metric-label">Licencia #903</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">50</div>
+                    <div class="metric-label">Empleados</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="font-size: 16pt;">CABA</div>
+                    <div class="metric-label">Unica sede</div>
+                </div>
+            </div>
+
+            <h3>Posicionamiento</h3>
+            <ul>
+                <li><strong>Slogan:</strong> "El foco esta en vos"</li>
+                <li><strong>Enfoque:</strong> Soluciones personalizadas para cada cliente</li>
+                <li><strong>Equipo:</strong> Joven y altamente capacitado</li>
+                <li><strong>Diferencial:</strong> Combinacion de expertise tecnico con entendimiento del mercado</li>
+            </ul>
+
+            <h3>Registros y Membresias</h3>
+            <div class="info-box">
+                <p><strong>Reguladores:</strong> CNV (Comision Nacional de Valores), UIF</p>
+                <p><strong>Miembro de:</strong> BYMA, MAE, MATBA RoFEX, MAV</p>
+                <p><strong>Licencias:</strong> ALyC #903 | ACyDI #157</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: ESTRUCTURA ORGANIZACIONAL -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">3</span>Estructura Organizacional</h2>
+
+            <h3>Cuerpo Directivo</h3>
+            <div class="org-grid">
+                <div class="org-card directivo">
+                    <img src="IPR.jpg" alt="Ignacio Perez Riba" class="org-card-photo">
+                    <h4>Ignacio Perez Riba</h4>
+                    <p>Director Corporativo</p>
+                </div>
+                <div class="org-card directivo">
+                    <img src="FV.jpg" alt="Felipe Venancio" class="org-card-photo">
+                    <h4>Felipe Venancio</h4>
+                    <p>CEO, Socio y Presidente</p>
+                </div>
+                <div class="org-card directivo">
+                    <img src="LC.jpg" alt="Lucas Calderoni" class="org-card-photo">
+                    <h4>Lucas Calderoni</h4>
+                    <p>Socio | Head Trader<br>Research, FCI y Operaciones</p>
+                </div>
+            </div>
+
+            <h3>El Resto del Equipo</h3>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cargo</th>
+                    <th>Area</th>
+                </tr>
+                <tr>
+                    <td><strong>John Gandolfo</strong></td>
+                    <td>Gerente Comercial</td>
+                    <td>Banca Privada</td>
+                </tr>
+                <tr>
+                    <td><strong>Federico Fazzari</strong></td>
+                    <td>Gerente</td>
+                    <td>PyMEs</td>
+                </tr>
+                <tr>
+                    <td><strong>Tomas Calderoni</strong></td>
+                    <td>Gerente Retail</td>
+                    <td>Retail / VetaFlat</td>
+                </tr>
+                <tr>
+                    <td><strong>Santiago Migone</strong></td>
+                    <td>Gerente</td>
+                    <td>Nuevos Negocios</td>
+                </tr>
+                <tr>
+                    <td><strong>Roman Daffinoti</strong></td>
+                    <td>Gerente</td>
+                    <td>Procesos</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: UNIDADES DE NEGOCIO -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">4</span>Unidades de Negocio</h2>
+
+            <div class="business-cards">
+                <div class="business-card">
+                    <div class="business-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v1h20V7L12 2zm0 2.5L18 7H6l6-2.5zM4 9v10h2v-8h2v8h2v-8h2v8h2v-8h2v8h2V9H4zm-2 12h20v2H2v-2z"/></svg>
+                    </div>
+                    <div class="business-card-content">
+                        <h4>Institucionales</h4>
+                        <p>Servicios especializados para instituciones financieras y fondos de inversion</p>
+                    </div>
+                </div>
+                <div class="business-card">
+                    <div class="business-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                    </div>
+                    <div class="business-card-content">
+                        <h4>Corporativo</h4>
+                        <p>Soluciones financieras para grandes empresas y corporaciones</p>
+                    </div>
+                </div>
+                <div class="business-card">
+                    <div class="business-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
+                    </div>
+                    <div class="business-card-content">
+                        <h4>PyME 360</h4>
+                        <p>Servicios integrales para PyMEs: descuento de cheques, financiamiento, operatoria transaccional</p>
+                    </div>
+                </div>
+                <div class="business-card">
+                    <div class="business-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H6v-.99c.2-.72 3.3-2.01 6-2.01s5.8 1.29 6 2v1z"/></svg>
+                    </div>
+                    <div class="business-card-content">
+                        <h4>Banca Privada</h4>
+                        <p>Gestion patrimonial personalizada para individuos y familias</p>
+                    </div>
+                </div>
+                <div class="business-card">
+                    <div class="business-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                    </div>
+                    <div class="business-card-content">
+                        <h4>Retail (VetaFlat)</h4>
+                        <p>Plataforma de trading con 0% comisiones para traders activos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box verde">
+                <h4>Cobertura 360° de la Economia Real</h4>
+                <p>Desde institucionales hasta traders individuales, todas las soluciones bajo el mismo techo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: PROPUESTA DE VALOR -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">5</span>Propuesta de Valor</h2>
+
+            <div class="propuesta-hero">
+                <h3>Nuestra Promesa</h3>
+                <p>"Todo lo que necesitas para crecer financieramente, con gente que te conoce y responde."</p>
+            </div>
+
+            <div class="pilares-container">
+                <div class="pilares-title">5 Pilares que nos Definen</div>
+                <div class="pilares">
+                    <div class="pilar">
+                        <div class="pilar-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </div>
+                        <h4>Cobertura 360° Real</h4>
+                        <p>Todo bajo el mismo techo, con equipos que se hablan entre sí</p>
+                    </div>
+                    <div class="pilar">
+                        <div class="pilar-icon">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h4>Continuidad de Relación</h4>
+                        <p>Tu ejecutivo de hoy es el mismo de mañana y del año que viene</p>
+                    </div>
+                    <div class="pilar">
+                        <div class="pilar-icon">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        </div>
+                        <h4>Velocidad de Economía Real</h4>
+                        <p>Respuestas en horas, no en días. Decisiones ágiles</p>
+                    </div>
+                    <div class="pilar">
+                        <div class="pilar-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        </div>
+                        <h4>Honestidad sin Letra Chica</h4>
+                        <p>Te decimos lo que pensamos, incluso cuando no es lo que querés escuchar</p>
+                    </div>
+                    <div class="pilar">
+                        <div class="pilar-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <h4>Acceso Directo a Quienes Deciden</h4>
+                        <p>Hablás con personas que pueden resolver, sin intermediarios</p>
+                    </div>
+                </div>
+                <div class="tagline-final">
+                    <p><span>El foco</span> está en vos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: PROCESO COMERCIAL -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">6</span>Cómo Recibimos a Nuestros Clientes</h2>
+
+            <div class="proceso-container">
+                <div class="proceso-title">El Camino del Cliente</div>
+                <div class="proceso-subtitle">De la primera conversación a ser parte de Vetacap</div>
+
+                <div class="proceso-timeline">
+                    <div class="proceso-step">
+                        <div class="proceso-step-num">
+                            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                        </div>
+                        <h4>Primer Contacto</h4>
+                        <p>Nos conocemos y entendemos tu situación</p>
+                    </div>
+                    <div class="proceso-step">
+                        <div class="proceso-step-num">
+                            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                        </div>
+                        <h4>Descubrimiento</h4>
+                        <p>Conocemos tus objetivos, perfil y necesidades</p>
+                    </div>
+                    <div class="proceso-step">
+                        <div class="proceso-step-num">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-5-6v4h-2v-4H9l3-3 3 3h-2z"/></svg>
+                        </div>
+                        <h4>Propuesta</h4>
+                        <p>Diseñamos una estrategia personalizada</p>
+                    </div>
+                    <div class="proceso-step">
+                        <div class="proceso-step-num">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        </div>
+                        <h4>Apertura</h4>
+                        <p>Abrimos tu cuenta de forma simple y rápida</p>
+                    </div>
+                    <div class="proceso-step">
+                        <div class="proceso-step-num">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h4>Onboarding</h4>
+                        <p>Te acompañamos en tus primeras operaciones</p>
+                    </div>
+                    <div class="proceso-step">
+                        <div class="proceso-step-num">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h4>Cliente Vetacap</h4>
+                        <p>Relación continua con tu ejecutivo asignado</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SLIDE 8: ARQUETIPO DE CLIENTE -->
+    <div class="section">
+        <div class="section-inner">
+            <h2><span class="section-number">7</span>Arquetipo de Cliente de Vetacap</h2>
+
+            <div class="arquetipo-container">
+                <div class="arquetipo-title">Arquetipo de Cliente</div>
+                <div class="arquetipo-subtitle">El Dueño de PyME que Crece con Nosotros</div>
+
+                <div class="arquetipo-card">
+                    <div class="arquetipo-avatar">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <div class="arquetipo-info">
+                        <h4>Empresario PyME | 40-60 años</h4>
+                        <p class="arquetipo-desc">Dueño de empresa con facturación activa que busca optimizar tanto su negocio como su patrimonio personal</p>
+
+                        <div class="arquetipo-servicios">
+                            <div class="arquetipo-servicio">
+                                <h5>Cuenta Empresa</h5>
+                                <ul>
+                                    <li>Descuento de cheques</li>
+                                    <li>Financiamiento a tasa</li>
+                                    <li>Inversión de excedentes</li>
+                                    <li>Operatoria transaccional</li>
+                                </ul>
+                            </div>
+                            <div class="arquetipo-servicio">
+                                <h5>Cuenta Personal</h5>
+                                <ul>
+                                    <li>Gestión patrimonial</li>
+                                    <li>FCI Hard Dollar</li>
+                                    <li>Bonos y CEDEARs</li>
+                                    <li>Estrategia personalizada</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="arquetipo-beneficio">
+                            <p>Un solo lugar para empresa y patrimonio personal. Mismo equipo, misma confianza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <svg class="footer-logo" viewBox="0 0 841.89 595.28" xmlns="http://www.w3.org/2000/svg">
+            <defs><style>.st0{fill:#00c600}.st1{fill:#1036e2}</style></defs>
+            <path class="st1" d="M247.78,242.66l14.53,31.53,14.47-31.53h14.58l-29.17,60.01-28.94-60.01h14.53Z"/>
+            <path class="st1" d="M442.07,298.8l-14.53-31.53-14.47,31.53h-14.58l29.17-60.01,28.94,60.01h-14.53Z"/>
+            <path class="st0" d="M413.81,316.91l13.85-28.49,13.74,28.49h-27.59Z"/>
+            <path class="st1" d="M349.24,273.78h-40.24c.35,4.61,1.84,8.28,4.5,11.01,2.65,2.69,6.05,4.04,10.2,4.04,3.23,0,5.9-.77,8.01-2.31,2.08-1.54,4.44-4.38,7.09-8.53l10.95,6.11c-1.69,2.88-3.48,5.35-5.36,7.41-1.88,2.06-3.9,3.75-6.05,5.07-2.15,1.33-4.48,2.3-6.98,2.91-2.5.61-5.21.92-8.13.92-8.38,0-15.1-2.69-20.18-8.07-5.07-5.42-7.61-12.6-7.61-21.56s2.46-16.06,7.38-21.56c4.96-5.42,11.53-8.13,19.72-8.13s14.8,2.63,19.6,7.9c4.77,5.23,7.15,12.47,7.15,21.73l-.06,3.06ZM335.92,263.18c-1.81-6.92-6.17-10.38-13.09-10.38-1.58,0-3.06.24-4.44.72-1.38.48-2.64,1.17-3.78,2.08-1.13.9-2.1,1.99-2.91,3.26s-1.42,2.71-1.84,4.32h26.06Z"/>
+            <path class="st1" d="M383.14,254.76v44.04h-12.97v-44.04h-15.1v-12.11h43.42v12.11h-15.35Z"/>
+            <path class="st1" d="M585.61,275.98v22.81h-8.48v-56.17h9.6c4.71,0,8.26.33,10.66.98,2.42.65,4.56,1.89,6.4,3.71,3.22,3.15,4.84,7.13,4.84,11.93,0,5.14-1.72,9.22-5.17,12.22-3.44,3.01-8.09,4.51-13.93,4.51h-3.93ZM585.61,268.13h3.16c7.78,0,11.68-2.99,11.68-8.99s-4.01-8.69-12.04-8.69h-2.8v17.68Z"/>
+            <path class="st1" d="M510.23,249.18l-5.76,5.68c-4.96-4.15-10.09-6.22-15.4-6.22-5.84,0-10.77,2.1-14.77,6.3-4.03,4.17-6.04,9.28-6.04,15.32s2.01,11,6.04,15.1c4.03,4.1,8.96,6.15,14.81,6.15,3.02,0,5.59-.49,7.7-1.47,1.18-.49,2.4-1.15,3.66-1.99,1.27-.83,2.6-1.84,4-3.02l5.97,5.78c-5.68,4.64-10.95,8.73-21.44,8.73-8.13,0-15.06-2.84-20.81-8.51-5.72-5.72-8.58-12.62-8.58-20.7,0-7.24,2.39-13.7,7.18-19.37,5.89-6.95,13.52-10.42,22.87-10.42,8.28,0,15.9,4.09,20.57,8.65Z"/>
+            <path class="st1" d="M552.68,284.99h-24.34l-6.33,13.81h-9.24l28.14-60.44,27.14,60.44h-9.39l-5.97-13.81ZM549.18,276.93l-8.43-19.34-8.84,19.34h17.27Z"/>
+        </svg>
+        <p><strong>Vetacap Sociedad de Bolsa</strong></p>
+        <p>Av. Jeronimo Salguero 2745, Piso 3 | CABA, Argentina</p>
+        <p>info@vetacapital.com.ar | www.vetacap.com.ar</p>
+        <p class="slogan-footer">EL FOCO ESTA EN VOS</p>
+    </div>
+
+</body>
+</html>
