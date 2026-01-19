@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Estrategico PyME 360 - VetaCap 2026</title>
+    <style>
+        :root {
+            --primary-blue: #1036E2;
+            --accent-green: #00C600;
+            --dark-blue: #021751;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f5f7fa;
+            --medium-gray: #e0e5ec;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-blue);
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .slogan {
+            font-size: 12px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .cover-logo {
+            height: 80px;
+            margin-bottom: 40px;
+        }
+
+        .cover-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            color: var(--dark-blue);
+            margin-bottom: 30px;
+        }
+
+        .cover-year {
+            display: inline-block;
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .cover-meta {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-green);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 198, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 198, 0, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .section h2 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            border-bottom: 3px solid var(--accent-green);
+            padding-bottom: 8px;
+            flex: 1;
+        }
+
+        .section h3 {
+            color: var(--dark-blue);
+            font-size: 18px;
+            margin: 20px 0 15px 0;
+        }
+
+        .section h4 {
+            color: var(--primary-blue);
+            font-size: 16px;
+            margin: 15px 0 10px 0;
+        }
+
+        .section p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+
+        /* Collapsible Subsections */
+        .collapsible-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 12px 15px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            margin: 20px 0 15px 0;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: var(--medium-gray);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .collapse-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 2000px;
+            opacity: 1;
+        }
+
+        .collapsible-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box.destacado {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .info-box.green {
+            border-left-color: var(--accent-green);
+        }
+
+        .info-box.warning {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .nota-importante {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Metrics Grid */
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: var(--white);
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-card.highlight {
+            border-color: var(--accent-green);
+            background: linear-gradient(135deg, rgba(0, 198, 0, 0.05) 0%, var(--white) 100%);
+        }
+
+        .metric-card.churn {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.05) 0%, var(--white) 100%);
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .metric-card.highlight .metric-value {
+            color: var(--accent-green);
+        }
+
+        .metric-card.churn .metric-value {
+            color: #dc3545;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        tr.highlight-row {
+            background: rgba(0, 198, 0, 0.1);
+        }
+
+        tr.churn-row {
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        tr.total-row {
+            background: var(--dark-blue);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        /* Scenarios Grid */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .scenario-card {
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .scenario-card.conservador {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border: 2px solid #ffc107;
+        }
+
+        .scenario-card.base {
+            background: linear-gradient(135deg, #e6f0ff 0%, #cce0ff 100%);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .scenario-card.optimista {
+            background: linear-gradient(135deg, #e6ffe6 0%, #ccffcc 100%);
+            border: 2px solid var(--accent-green);
+        }
+
+        .scenario-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .scenario-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .scenario-card.conservador .scenario-value { color: #b38600; }
+        .scenario-card.base .scenario-value { color: var(--primary-blue); }
+        .scenario-card.optimista .scenario-value { color: var(--accent-green); }
+
+        .scenario-detail {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Team Cards */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .team-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-role {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+
+        .team-desc {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary-blue);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+
+        .timeline-quarter {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content {
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-nuevo {
+            background: var(--accent-green);
+            color: var(--white);
+        }
+
+        .badge-foco {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .badge-pendiente {
+            background: #ffc107;
+            color: var(--dark-blue);
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .toc h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .toc-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+        }
+
+        .toc-num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .toc-text {
+            font-size: 14px;
+            color: var(--dark-blue);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid var(--medium-gray);
+            margin-top: 60px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .footer-slogan {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Acquisition Sources */
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .source-card {
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .source-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .source-header h4 {
+            color: var(--white);
+            margin: 0;
+        }
+
+        .source-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .source-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .source-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .source-detail {
+            font-size: 11px;
+            color: var(--primary-blue);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        /* Page breaks for print */
+        .page-break {
+            page-break-after: always;
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .cover-page {
+                min-height: auto;
+                padding: 40px 20px;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .collapsible-content.collapsed {
+                max-height: none;
+                opacity: 1;
+            }
+
+            .collapse-icon {
+                display: none;
+            }
+        }
+
+        /* KPI Progress */
+        .kpi-progress {
+            margin: 15px 0;
+        }
+
+        .kpi-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        .kpi-bar {
+            height: 20px;
+            background: var(--medium-gray);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .kpi-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* Lists */
+        ul {
+            margin: 15px 0 15px 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Arquetipo Stats */
+        .arquetipo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .arquetipo-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .arquetipo-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-green);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .stat-value.highlight {
+            color: var(--accent-green);
+        }
+
+        /* Media Podada Box */
+        .media-podada-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .media-podada-value {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .media-podada-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .media-podada-source {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">Imprimir PDF</button>
+
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <svg class="cover-logo" viewBox="0 0 841.89 595.28" style="height: 80px;">
+                <defs>
+                    <style>.st0{fill:#00c600;}.st1{fill:#1036e2;}</style>
+                </defs>
+                <path class="st1" d="M247.78,242.66l14.53,31.53,14.47-31.53h14.58l-29.17,60.01-28.94-60.01h14.53Z"/>
+                <path class="st1" d="M442.07,298.8l-14.53-31.53-14.47,31.53h-14.58l29.17-60.01,28.94-60.01h-14.53Z"/>
+                <path class="st0" d="M413.81,316.91l13.85-28.49,13.74,28.49h-27.59Z"/>
+                <path class="st1" d="M349.24,273.78h-40.24c.35,4.61,1.84,8.28,4.5,11.01,2.65,2.69,6.05,4.04,10.2,4.04,3.23,0,5.9-.77,8.01-2.31,2.08-1.54,4.44-4.38,7.09-8.53l10.95,6.11c-1.69,2.88-3.48,5.35-5.36,7.41-1.88,2.06-3.9,3.75-6.05,5.07-2.15,1.33-4.48,2.3-6.98,2.91-2.5.61-5.21.92-8.13.92-8.38,0-15.1-2.69-20.18-8.07-5.07-5.42-7.61-12.6-7.61-21.56s2.46-16.06,7.38-21.56c4.96-5.42,11.53-8.13,19.72-8.13s14.8,2.63,19.6,7.9c4.77,5.23,7.15,12.47,7.15,21.73l-.06,3.06ZM335.92,263.18c-1.81-6.92-6.17-10.38-13.09-10.38-1.58,0-3.06.24-4.44.72-1.38.48-2.64,1.17-3.78,2.08-1.13.9-2.1,1.99-2.91,3.26s-1.42,2.71-1.84,4.32h26.06Z"/>
+                <path class="st1" d="M383.14,254.76v44.04h-12.97v-44.04h-15.1v-12.11h43.42v12.11h-15.35Z"/>
+                <path class="st1" d="M585.61,275.98v22.81h-8.48v-56.17h9.6c4.71,0,8.26.33,10.66.98,2.42.65,4.56,1.89,6.4,3.71,3.22,3.15,4.84,7.13,4.84,11.93,0,5.14-1.72,9.22-5.17,12.22-3.44,3.01-8.09,4.51-13.93,4.51h-3.93ZM585.61,268.13h3.16c7.78,0,11.68-2.99,11.68-8.99s-4.01-8.69-12.04-8.69h-2.8v17.68Z"/>
+                <path class="st1" d="M510.23,249.18l-5.76,5.68c-4.96-4.15-10.09-6.22-15.4-6.22-5.84,0-10.77,2.1-14.77,6.3-4.03,4.17-6.04,9.28-6.04,15.32s2.01,11,6.04,15.1c4.03,4.1,8.96,6.15,14.81,6.15,3.02,0,5.59-.49,7.7-1.47,1.18-.49,2.4-1.15,3.66-1.99,1.27-.83,2.6-1.84,4-3.02l5.97,5.78c-5.68,4.64-10.95,8.73-21.44,8.73-8.13,0-15.06-2.84-20.81-8.51-5.72-5.72-8.58-12.62-8.58-20.7,0-7.24,2.39-13.7,7.18-19.37,5.89-6.95,13.52-10.42,22.87-10.42,8.28,0,15.9,4.09,20.57,8.65Z"/>
+                <path class="st1" d="M552.68,284.99h-24.34l-6.33,13.81h-9.24l28.14-60.44,27.14,60.44h-9.39l-5.97-13.81ZM549.18,276.93l-8.43-19.34-8.84,19.34h17.27Z"/>
+            </svg>
+            <h1 class="cover-title">Plan Estrategico PyME 360</h1>
+            <p class="cover-subtitle">El ALyC de la economia real</p>
+            <div class="cover-year">2026-2027</div>
+            <p class="cover-meta">Area Empresas - VetaCap S.A.</p>
+            <p class="cover-meta">Lider: Federico Fazzari</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3>Contenido</h3>
+            <div class="toc-columns">
+                <div class="toc-item"><span class="toc-num">1</span><span class="toc-text">Resumen Ejecutivo</span></div>
+                <div class="toc-item"><span class="toc-num">2</span><span class="toc-text">Situacion Actual</span></div>
+                <div class="toc-item"><span class="toc-num">3</span><span class="toc-text">Cliente Objetivo (Arquetipo)</span></div>
+                <div class="toc-item"><span class="toc-num">4</span><span class="toc-text">Estrategia de Captacion</span></div>
+                <div class="toc-item"><span class="toc-num">5</span><span class="toc-text">Modelo de Atencion</span></div>
+                <div class="toc-item"><span class="toc-num">6</span><span class="toc-text">Equipo</span></div>
+                <div class="toc-item"><span class="toc-num">7</span><span class="toc-text">Proyeccion Financiera 2026</span></div>
+                <div class="toc-item"><span class="toc-num">8</span><span class="toc-text">Proyeccion Financiera 2027</span></div>
+                <div class="toc-item"><span class="toc-num">9</span><span class="toc-text">Iniciativas Clave</span></div>
+                <div class="toc-item"><span class="toc-num">10</span><span class="toc-text">Roadmap</span></div>
+                <div class="toc-item"><span class="toc-num">11</span><span class="toc-text">KPIs y Metricas</span></div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Section 1: Executive Summary -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2>Resumen Ejecutivo</h2>
+            </div>
+
+            <div class="info-box destacado">
+                <p><strong>PyME 360</strong> es el servicio integral de VetaCap para pequenas y medianas empresas argentinas. Nuestro objetivo es ser el <strong>primer llamado del empresario</strong> cuando necesita soluciones financieras, ofreciendo un acompanamiento consultivo que simplifica la vida del dueno de la PyME.</p>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Highlights 2026</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <div class="metric-value">80</div>
+                        <div class="metric-label">Clientes Actuales</div>
+                    </div>
+                    <div class="metric-card churn">
+                        <div class="metric-value">-10</div>
+                        <div class="metric-label">Churn Estimado</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">+104</div>
+                        <div class="metric-label">Clientes Nuevos</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-value">174</div>
+                        <div class="metric-label">Clientes Fin 2026</div>
+                    </div>
+                </div>
+
+                <div class="metrics-row" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-value">$535K</div>
+                        <div class="metric-label">Facturacion 2025</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-value">$844K</div>
+                        <div class="metric-label">Facturacion Proyectada 2026</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-value">+58%</div>
+                        <div class="metric-label">Crecimiento vs 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Highlights 2027</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="metrics-row" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-value">278</div>
+                        <div class="metric-label">Clientes Fin 2027</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-value">$1.29M</div>
+                        <div class="metric-label">Facturacion Proyectada 2027</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-value">+52%</div>
+                        <div class="metric-label">Crecimiento vs 2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-podada-box">
+                <div class="media-podada-label">Facturacion anual esperada por cliente</div>
+                <div class="media-podada-value">$4,461</div>
+                <div class="media-podada-label">USD/ano (Media Podada 10% - Sector PyME)</div>
+                <div class="media-podada-source">Fuente: Analisis_Facturacion_Cliente_v2.xlsx | Mensual: $372</div>
+            </div>
+
+            <div class="info-box green">
+                <p><strong>Proyeccion basada en data real:</strong> La facturacion anual esperada de $4,461 USD/ano ($372/mes) corresponde a la media podada (trimmed mean 10%) del segmento PyME 360 actual, eliminando outliers.</p>
+            </div>
+        </div>
+
+        <!-- Section 2: Current Situation -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2>Situacion Actual</h2>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Metricas Area Empresas (Dic 2025)</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Metrica</th>
+                        <th>Total Empresas</th>
+                        <th>PyME 360</th>
+                    </tr>
+                    <tr>
+                        <td>Clientes Activos</td>
+                        <td>140</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Comitentes Activos</td>
+                        <td>146</td>
+                        <td>~85</td>
+                    </tr>
+                    <tr>
+                        <td>AUM (USD mill.)</td>
+                        <td>30</td>
+                        <td>~15</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>Facturacion 2025 (USD)</td>
+                        <td>1,400,000</td>
+                        <td>534,864</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Estadisticas de Facturacion PyME 360</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Estadistico</th>
+                        <th>Valor (USD/ano)</th>
+                        <th>Nota</th>
+                    </tr>
+                    <tr>
+                        <td>Promedio Aritmetico</td>
+                        <td>$8,262</td>
+                        <td>Sesgado por outliers</td>
+                    </tr>
+                    <tr>
+                        <td>Mediana</td>
+                        <td>$3,233</td>
+                        <td>Punto medio</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Media Podada (10%)</strong></td>
+                        <td><strong>$4,461</strong></td>
+                        <td>Usado para proyecciones</td>
+                    </tr>
+                    <tr>
+                        <td>Minimo</td>
+                        <td>-$7,725</td>
+                        <td>Cliente con reversiones</td>
+                    </tr>
+                    <tr>
+                        <td>Maximo</td>
+                        <td>$104,116</td>
+                        <td>Cliente premium</td>
+                    </tr>
+                </table>
+
+                <div class="info-box">
+                    <p><strong>Por que usamos la Media Podada?</strong> La media podada elimina el 10% superior e inferior de valores extremos, dando una estimacion mas robusta del cliente "tipico" del segmento.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Section 3: Target Customer - ARQUETIPO -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2>Cliente Objetivo (Arquetipo PyME)</h2>
+            </div>
+
+            <div class="info-box">
+                <p>Basado en el analisis de <strong>79 empresas PyME</strong> clientes actuales de VetaCap, con datos de LUFE, Registro Nacional de Sociedades y SGRs.</p>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Perfil del Arquetipo</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="arquetipo-grid">
+                    <div class="arquetipo-card">
+                        <h4>Perfil Empresarial</h4>
+                        <div class="stat-row">
+                            <span class="stat-label">Antiguedad promedio</span>
+                            <span class="stat-value">14 anos</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Con garantias SGR</span>
+                            <span class="stat-value highlight">45.6%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Evolucion ventas YoY</span>
+                            <span class="stat-value highlight">+47.6%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Ventas mensuales prom.</span>
+                            <span class="stat-value">$181M ARS</span>
+                        </div>
+                    </div>
+                    <div class="arquetipo-card">
+                        <h4>Cobertura de Datos</h4>
+                        <div class="stat-row">
+                            <span class="stat-label">Total CUITs analizados</span>
+                            <span class="stat-value">79</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Con archivo LUFE</span>
+                            <span class="stat-value">48</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">En Registro Sociedades</span>
+                            <span class="stat-value">70</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Indicadores financieros</span>
+                            <span class="stat-value">28</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Distribucion Geografica</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Provincia</th>
+                        <th>Participacion</th>
+                        <th>Empresas</th>
+                    </tr>
+                    <tr>
+                        <td>Buenos Aires</td>
+                        <td>~44%</td>
+                        <td>~35</td>
+                    </tr>
+                    <tr>
+                        <td>CABA</td>
+                        <td>~25%</td>
+                        <td>~20</td>
+                    </tr>
+                    <tr>
+                        <td>Cordoba</td>
+                        <td>~10%</td>
+                        <td>~8</td>
+                    </tr>
+                    <tr>
+                        <td>Santa Fe</td>
+                        <td>~8%</td>
+                        <td>~6</td>
+                    </tr>
+                    <tr>
+                        <td>Otras (5 provincias)</td>
+                        <td>~13%</td>
+                        <td>~10</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Distribucion por Sector AFIP</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="metrics-row" style="grid-template-columns: repeat(5, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">G</div>
+                        <div class="metric-label">Comercio</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">C</div>
+                        <div class="metric-label">Industria</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">M</div>
+                        <div class="metric-label">Servicios Prof.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">F</div>
+                        <div class="metric-label">Construccion</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">+9</div>
+                        <div class="metric-label">Otros sectores</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nota-importante">
+                <strong>Insight clave:</strong> El 45.6% de nuestros clientes PyME ya utiliza garantias SGR, lo que indica familiaridad con instrumentos financieros del mercado de capitales.
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Section 4: Acquisition Strategy -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">4</span>
+                <h2>Estrategia de Captacion</h2>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Fuentes de Originacion 2026</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="sources-grid">
+                    <div class="source-card">
+                        <div class="source-header">
+                            <h4>Inercia / Boca en Boca</h4>
+                        </div>
+                        <div class="source-body">
+                            <div class="source-value">42</div>
+                            <div class="source-label">clientes/ano</div>
+                            <div class="source-detail">$85,900 USD (prorrateado)</div>
+                        </div>
+                    </div>
+                    <div class="source-card">
+                        <div class="source-header">
+                            <h4>Pauta Publicitaria</h4>
+                        </div>
+                        <div class="source-body">
+                            <div class="source-value">30</div>
+                            <div class="source-label">clientes/ano</div>
+                            <div class="source-detail">$61,357 USD (prorrateado)</div>
+                        </div>
+                    </div>
+                    <div class="source-card">
+                        <div class="source-header">
+                            <h4>Aliados Estrategicos</h4>
+                        </div>
+                        <div class="source-body">
+                            <div class="source-value">32</div>
+                            <div class="source-label">clientes/ano</div>
+                            <div class="source-detail">8 aliados x 4 clientes c/u</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics-row" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-value">104</div>
+                        <div class="metric-label">Total Clientes Nuevos 2026</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$4,461</div>
+                        <div class="metric-label">Facturacion Anual (Media Podada)</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-value">$213K</div>
+                        <div class="metric-label">Facturacion Nuevos 2026 (prorrat.)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Churn Estimado</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="info-box warning">
+                    <p><strong>Perdida estimada:</strong> 10 clientes (12.5% de la base actual)</p>
+                    <p>Basado en historico de rotacion del segmento empresas y ciclos de negocio de PyMEs.</p>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Material de Captacion</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Material</th>
+                        <th>Estado</th>
+                    </tr>
+                    <tr>
+                        <td>Brochure general</td>
+                        <td><span class="badge badge-foco">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Brochure por producto</td>
+                        <td><span class="badge badge-foco">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Presentacion comercial (PPT)</td>
+                        <td><span class="badge badge-foco">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Landing web PyME</td>
+                        <td><span class="badge badge-pendiente">Pendiente</span></td>
+                    </tr>
+                    <tr>
+                        <td>Radar PyME (herramienta de diagnostico)</td>
+                        <td><span class="badge badge-pendiente">Pendiente</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 5: Service Model -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">5</span>
+                <h2>Modelo de Atencion</h2>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Canales de Atencion</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="metrics-row" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">WhatsApp Business</div>
+                        <div class="metric-label">Canal principal - Atencion individual</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 20px;">Grupos WhatsApp</div>
+                        <div class="metric-label">Comunicacion de mercado</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Reporting</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Reporte</th>
+                        <th>Estado</th>
+                        <th>Frecuencia</th>
+                    </tr>
+                    <tr>
+                        <td>Reporte de resultados</td>
+                        <td><span class="badge badge-foco">Activo</span></td>
+                        <td>Mensual</td>
+                    </tr>
+                    <tr>
+                        <td>Reporte de portafolio</td>
+                        <td><span class="badge badge-foco">Activo</span></td>
+                        <td>Mensual</td>
+                    </tr>
+                    <tr>
+                        <td>Reporte adHoc PyME</td>
+                        <td><span class="badge badge-pendiente">En desarrollo</span></td>
+                        <td>On-demand</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Fidelizacion</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <ul>
+                    <li><span class="badge badge-foco">Activo</span> Regalos corporativos</li>
+                    <li><span class="badge badge-pendiente">2026</span> Experiencias de valor (visitas a plantas, networking)</li>
+                    <li><span class="badge badge-pendiente">2026</span> Zooms educativos sobre finanzas PyME</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Section 6: Team -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">6</span>
+                <h2>Equipo</h2>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <span class="team-role">Lider de Area</span>
+                    <div class="team-name">Federico Fazzari</div>
+                    <div class="team-desc">Responsable PyME 360</div>
+                </div>
+                <div class="team-card">
+                    <span class="team-role">Comercial</span>
+                    <div class="team-name">2 Asesores</div>
+                    <div class="team-desc">Captacion y atencion de clientes</div>
+                </div>
+                <div class="team-card">
+                    <span class="team-role">Middle Office</span>
+                    <div class="team-name">2 Analistas</div>
+                    <div class="team-desc">Operaciones y soporte</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Total equipo actual:</strong> 5 personas</p>
+                <p><strong>Necesidad 2026:</strong> Comercial adicional en funcion del crecimiento de clientes</p>
+            </div>
+        </div>
+
+        <!-- Section 7: Financial Projections 2026 -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">7</span>
+                <h2>Proyeccion Financiera 2026</h2>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Escenarios 2026</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scenarios-grid">
+                    <div class="scenario-card conservador">
+                        <div class="scenario-title">Conservador</div>
+                        <div class="scenario-value">$774K</div>
+                        <div class="scenario-detail">70 clientes nuevos</div>
+                        <div class="scenario-detail">+45% vs 2025</div>
+                    </div>
+                    <div class="scenario-card base">
+                        <div class="scenario-title">Base</div>
+                        <div class="scenario-value">$844K</div>
+                        <div class="scenario-detail">104 clientes nuevos</div>
+                        <div class="scenario-detail">+58% vs 2025</div>
+                    </div>
+                    <div class="scenario-card optimista">
+                        <div class="scenario-title">Optimista</div>
+                        <div class="scenario-value">$897K</div>
+                        <div class="scenario-detail">130 clientes nuevos</div>
+                        <div class="scenario-detail">+68% vs 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Detalle Escenario Base 2026</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Valor</th>
+                        <th>Notas</th>
+                    </tr>
+                    <tr>
+                        <td>Clientes Inicio 2026</td>
+                        <td>80</td>
+                        <td>Base 2025</td>
+                    </tr>
+                    <tr class="churn-row">
+                        <td>Churn</td>
+                        <td>-10</td>
+                        <td>12.5% perdida</td>
+                    </tr>
+                    <tr>
+                        <td>Clientes Base Efectiva</td>
+                        <td>70</td>
+                        <td>Post-churn</td>
+                    </tr>
+                    <tr>
+                        <td>Clientes Nuevos</td>
+                        <td>+104</td>
+                        <td>42 inercia + 30 pauta + 32 aliados</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Clientes Fin 2026</strong></td>
+                        <td><strong>174</strong></td>
+                        <td>+118% vs inicio</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th>Facturacion</th>
+                        <th>Valor (USD)</th>
+                        <th>Calculo</th>
+                    </tr>
+                    <tr>
+                        <td>Base Anualizada</td>
+                        <td>$653,266</td>
+                        <td>2025 + uplift nuevos 2025 (6.5 meses)</td>
+                    </tr>
+                    <tr class="churn-row">
+                        <td>Churn (10 clientes)</td>
+                        <td>-$22,305</td>
+                        <td>10 x $4,461 x 6 meses / 12</td>
+                    </tr>
+                    <tr>
+                        <td>Facturacion Nuevos (104 clientes)</td>
+                        <td>$212,641</td>
+                        <td>104 x $4,461 x 5.5 meses / 12</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL 2026</strong></td>
+                        <td><strong>$843,602</strong></td>
+                        <td>+58% vs 2025</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Composicion de Facturacion Nuevos 2026</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="kpi-progress">
+                    <div class="kpi-label">
+                        <span>Inercia (42 clientes)</span>
+                        <span>$85,900 (40%)</span>
+                    </div>
+                    <div class="kpi-bar">
+                        <div class="kpi-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="kpi-progress">
+                    <div class="kpi-label">
+                        <span>Pauta Digital (30 clientes)</span>
+                        <span>$61,357 (29%)</span>
+                    </div>
+                    <div class="kpi-bar">
+                        <div class="kpi-fill" style="width: 29%;"></div>
+                    </div>
+                </div>
+                <div class="kpi-progress">
+                    <div class="kpi-label">
+                        <span>Aliados Estrategicos (32 clientes)</span>
+                        <span>$65,447 (31%)</span>
+                    </div>
+                    <div class="kpi-bar">
+                        <div class="kpi-fill" style="width: 31%;"></div>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <p><strong>Total Facturacion Nuevos:</strong> $212,641 (104 clientes x $4,461/ano x 5.5 meses / 12)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Section 8: Financial Projections 2027 -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">8</span>
+                <h2>Proyeccion Financiera 2027</h2>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Escenarios 2027</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scenarios-grid">
+                    <div class="scenario-card conservador">
+                        <div class="scenario-title">Conservador</div>
+                        <div class="scenario-value">$1.21M</div>
+                        <div class="scenario-detail">70 clientes nuevos</div>
+                        <div class="scenario-detail">+44% vs 2026</div>
+                    </div>
+                    <div class="scenario-card base">
+                        <div class="scenario-title">Base</div>
+                        <div class="scenario-value">$1.29M</div>
+                        <div class="scenario-detail">104 clientes nuevos</div>
+                        <div class="scenario-detail">+52% vs 2026</div>
+                    </div>
+                    <div class="scenario-card optimista">
+                        <div class="scenario-title">Optimista</div>
+                        <div class="scenario-value">$1.34M</div>
+                        <div class="scenario-detail">130 clientes nuevos</div>
+                        <div class="scenario-detail">+59% vs 2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Detalle Escenario Base 2027</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Valor</th>
+                        <th>Notas</th>
+                    </tr>
+                    <tr>
+                        <td>Clientes Inicio 2027</td>
+                        <td>174</td>
+                        <td>Base fin 2026</td>
+                    </tr>
+                    <tr class="churn-row">
+                        <td>Churn Estimado</td>
+                        <td>0</td>
+                        <td>Asumido estable</td>
+                    </tr>
+                    <tr>
+                        <td>Clientes Nuevos</td>
+                        <td>+104</td>
+                        <td>Mismo ritmo que 2026</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Clientes Fin 2027</strong></td>
+                        <td><strong>278</strong></td>
+                        <td>+60% vs inicio</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th>Facturacion</th>
+                        <th>Valor (USD)</th>
+                        <th>Calculo</th>
+                    </tr>
+                    <tr>
+                        <td>Base Anualizada</td>
+                        <td>$1,072,380</td>
+                        <td>2026 + uplift nuevos 2026 - ajuste churn</td>
+                    </tr>
+                    <tr class="churn-row">
+                        <td>Churn (10 clientes)</td>
+                        <td>-$22,305</td>
+                        <td>10 x $4,461 x 6 meses / 12</td>
+                    </tr>
+                    <tr>
+                        <td>Clientes Nuevos 2027 (prorrateado)</td>
+                        <td>$212,641</td>
+                        <td>104 x $4,461 x 5.5 meses / 12</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL 2027</strong></td>
+                        <td><strong>$1,285,241</strong></td>
+                        <td>+52% vs 2026</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Resumen Bianual 2025-2027</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Metrica</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                        <th>2027</th>
+                        <th>CAGR</th>
+                    </tr>
+                    <tr>
+                        <td>Clientes</td>
+                        <td>80</td>
+                        <td>174</td>
+                        <td>278</td>
+                        <td>+86%</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Facturacion (USD)</strong></td>
+                        <td>$534,864</td>
+                        <td>$843,602</td>
+                        <td>$1,285,241</td>
+                        <td><strong>+55%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Crecimiento YoY</td>
+                        <td>-</td>
+                        <td>+58%</td>
+                        <td>+52%</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Section 9: Key Initiatives -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">9</span>
+                <h2>Iniciativas Clave 2026</h2>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Iniciativa</th>
+                    <th>Objetivo</th>
+                    <th>Prioridad</th>
+                </tr>
+                <tr>
+                    <td><strong>Programa de Aliados Estrategicos</strong></td>
+                    <td>Cerrar acuerdos con 8 estudios contables/consultoras</td>
+                    <td><span class="badge badge-nuevo">Alta</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Landing Web PyME</strong></td>
+                    <td>Desarrollar pagina de conversion para pauta</td>
+                    <td><span class="badge badge-nuevo">Alta</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Radar PyME</strong></td>
+                    <td>Herramienta de diagnostico financiero rapido</td>
+                    <td><span class="badge badge-foco">Media</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Zooms Educativos</strong></td>
+                    <td>Webinars mensuales sobre finanzas PyME</td>
+                    <td><span class="badge badge-foco">Media</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Reporte adHoc PyME</strong></td>
+                    <td>Personalizacion de reporting para cada cliente</td>
+                    <td><span class="badge badge-foco">Media</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 10: Roadmap -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">10</span>
+                <h2>Roadmap 2026</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-quarter">Q1 2026</div>
+                    <div class="timeline-content">
+                        <ul style="margin: 0;">
+                            <li>Disenar programa de aliados estrategicos</li>
+                            <li>Identificar y contactar primeros 4 aliados potenciales</li>
+                            <li>Definir specs para landing web PyME</li>
+                            <li>Lanzar campana de pauta optimizada</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-quarter">Q2 2026</div>
+                    <div class="timeline-content">
+                        <ul style="margin: 0;">
+                            <li>Cerrar primeros 4 aliados</li>
+                            <li>Lanzar landing web PyME</li>
+                            <li>Desarrollar MVP de Radar PyME</li>
+                            <li>Primer Zoom educativo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-quarter">Q3 2026</div>
+                    <div class="timeline-content">
+                        <ul style="margin: 0;">
+                            <li>Completar red de 8 aliados</li>
+                            <li>Optimizar conversion de pauta con datos</li>
+                            <li>Lanzar Radar PyME para clientes</li>
+                            <li>Evaluar necesidad de comercial adicional</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-quarter">Q4 2026</div>
+                    <div class="timeline-content">
+                        <ul style="margin: 0;">
+                            <li>Balance de programa de aliados</li>
+                            <li>Primera experiencia de valor (evento)</li>
+                            <li>Preparar plan 2027</li>
+                            <li>Cierre y revision de KPIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 11: KPIs -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">11</span>
+                <h2>KPIs y Metricas</h2>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Metricas de Crecimiento</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>KPI</th>
+                        <th>2025</th>
+                        <th>Meta 2026</th>
+                        <th>Meta 2027</th>
+                    </tr>
+                    <tr>
+                        <td>Clientes Activos</td>
+                        <td>80</td>
+                        <td>174</td>
+                        <td>278</td>
+                    </tr>
+                    <tr>
+                        <td>Facturacion Anual</td>
+                        <td>$534,864</td>
+                        <td>$843,602</td>
+                        <td>$1,285,241</td>
+                    </tr>
+                    <tr>
+                        <td>Clientes Nuevos/Mes</td>
+                        <td>4</td>
+                        <td>8.7</td>
+                        <td>8.7</td>
+                    </tr>
+                    <tr>
+                        <td>Aliados Activos</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Tasa de Churn</td>
+                        <td>-</td>
+                        <td>12.5%</td>
+                        <td>10%</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h3>Metricas de Eficiencia</h3>
+                <span class="collapse-icon">-</span>
+            </div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>KPI</th>
+                        <th>Formula</th>
+                        <th>Meta</th>
+                    </tr>
+                    <tr>
+                        <td>Facturacion por cliente (nuevos)</td>
+                        <td>Media podada sector</td>
+                        <td>$4,461/ano ($372/mes)</td>
+                    </tr>
+                    <tr>
+                        <td>Tasa de retencion</td>
+                        <td>1 - Churn</td>
+                        <td>> 87.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion de aliados</td>
+                        <td>Clientes via aliados / Total referidos</td>
+                        <td>> 30%</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion de pauta</td>
+                        <td>Clientes via pauta / Leads pauta</td>
+                        <td>> 10%</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Revision mensual:</strong> Dashboard de clientes, facturacion, y fuentes de adquisicion.</p>
+                <p><strong>Revision trimestral:</strong> Ajuste de proyecciones y evaluacion de iniciativas.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <svg class="footer-logo" viewBox="0 0 841.89 595.28" style="height: 40px;">
+                <defs>
+                    <style>.st0{fill:#00c600;}.st1{fill:#1036e2;}</style>
+                </defs>
+                <path class="st1" d="M372.28,229.8l19.45,42.22,19.37-42.22h19.53l-39.06,80.35-38.75-80.35h19.45Z"/>
+                <path class="st1" d="M479.61,304.98l-19.45-42.22-19.37,42.22h-19.53l39.06-80.35,38.75,80.35h-19.45Z"/>
+                <path class="st0" d="M441.77,329.23l18.54-38.15,18.4,38.15h-36.94Z"/>
+            </svg>
+            <p class="footer-slogan">EL FOCO ESTA EN VOS</p>
+            <p class="footer-text">VetaCap S.A. - Agente de Liquidacion y Compensacion - CNV N 123</p>
+            <p class="footer-text">25 de Mayo 555, Piso 10 - CABA, Argentina</p>
+            <br>
+            <p class="footer-text" style="font-size: 10px; color: #999;">Documento generado para uso interno - Enero 2026</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleCollapse(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.collapse-icon');
+
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                header.classList.remove('collapsed');
+                icon.textContent = '-';
+            } else {
+                content.classList.add('collapsed');
+                header.classList.add('collapsed');
+                icon.textContent = '+';
+            }
+        }
+    </script>
+</body>
+</html>

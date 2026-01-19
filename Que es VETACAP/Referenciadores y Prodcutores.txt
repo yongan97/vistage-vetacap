@@ -1,0 +1,9 @@
+VetaCap abona un porcentaje de las comisiones operadas a los referenciadores y productores que acercan clientes. Las llamamos retrocesiones
+
+Esos porcentajes varían pero oscilan entre el 15% y el 50% de las comisiones.
+
+Las retrocesiones a pagar se calculan sumando todos los conceptos de facturación excepto la comisión por caución tomadora.
+
+A su vez se paga descontando la alícuota de ingresos de brutos de VetaCap que hoy oscila el 5,5%
+
+Es decir, si VetaCap factura $100, y debe abonar una retrocesión del 20% no se paga $20 sino un 20% de $94,5 

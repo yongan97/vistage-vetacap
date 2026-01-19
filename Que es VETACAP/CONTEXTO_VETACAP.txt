@@ -1,0 +1,502 @@
+================================================================================
+                         CONTEXTO COMPLETO - VETACAP
+                     Sociedad de Bolsa - Argentina
+================================================================================
+
+Documento generado: Enero 2026
+Propósito: Contexto integral de la empresa para referencia rápida
+
+================================================================================
+                              1. QUE ES VETACAP
+================================================================================
+
+Vetacap Sociedad de Bolsa es una empresa argentina de servicios financieros
+especializada en gestión patrimonial y asesoría de inversiones. Se posiciona
+como "tu aliado financiero" con el slogan "El foco está en vos".
+
+DATOS GENERALES:
+- Tipo de empresa: Sociedad de Bolsa (ALyC - Agente de Liquidación y Custodia)
+- Tamaño: 20-50 empleados aproximadamente
+- Regulación: CNV (Comisión Nacional de Valores), UIF (Unidad de Información Financiera)
+- Ubicación: Av. Jerónimo Salguero 2745, Piso 3, CABA, Argentina
+- Teléfono: 5219-3400
+- Email: info@vetacapital.com.ar
+- Web: www.vetacap.com.ar
+- Actividad principal: Intermediación bursátil, gestión patrimonial, inversiones
+
+REGISTROS Y LICENCIAS:
+- CNV ALyC (Sociedad de Bolsa): Licencia #903
+- CNV ACyDI (Asesor de Inversiones): Licencia #157
+- Miembro de: BYMA, MAE, MATBA RoFEX, MAV
+
+REDES SOCIALES:
+- Twitter/X: @capitalveta
+- Instagram: @capitalveta
+- LinkedIn: Vetacap
+
+PLATAFORMAS DIGITALES (URLs):
+- Home Broker: cuentas.vetacapital.com.ar
+- Sistema Matrix: matriz.veta.xoms.com.ar
+- Apertura de Cuentas: aperturas.vetacap.com.ar
+
+FILOSOFIA:
+"Acompañar al cliente en sus decisiones financieras con honestidad,
+anticipación y cercanía, hablando como pares."
+
+POSICIONAMIENTO:
+- "La ALyC de la economía real"
+- Equipo joven y altamente capacitado
+- Enfoque en soluciones personalizadas
+- Combinación de expertise técnico con entendimiento del mercado
+
+
+================================================================================
+                    2. ESTRUCTURA ORGANIZACIONAL Y EMPLEADOS
+================================================================================
+
+CUERPO DIRECTIVO:
+--------------------------------------------------------------------------------
+- Felipe Venancio         | CEO, Socio y Presidente
+- Lucas Calderoni         | Socio, Head Trader, Research y FCI, Operaciones
+- Ignacio Pérez Riba      | Director Corporativo
+
+GERENCIAS:
+--------------------------------------------------------------------------------
+- John Gandolfo           | Gerente Comercial (Banca Privada)
+- Tomas Calderoni         | Gerente Retail (Retail / VetaFlat)
+- Santiago Migone         | Gerente de Nuevos Negocios
+- Roman Daffinoti         | Gerente de Procesos
+- Federico Fazzari        | Gerente de PyMEs
+
+AREA DE BANCA PRIVADA:
+--------------------------------------------------------------------------------
+- Juana Bidau             | Líder de Banca Privada (Comercial Sr.)
+- Ignacio Ruzo            | Analista de Banca Privada (Comercial Jr.)
+
+AREA DE TRADING:
+--------------------------------------------------------------------------------
+- Federico Jabbaz         | Jefe de Traders
+
+SOPORTE COMERCIAL:
+--------------------------------------------------------------------------------
+- Victoria Salemme        | Analista (apoyo comercial)
+
+
+================================================================================
+                          3. UNIDADES DE NEGOCIO
+================================================================================
+
+VETACAP opera en tres unidades de negocio principales:
+
+--------------------------------------------------------------------------------
+3.1 BANCA PRIVADA
+--------------------------------------------------------------------------------
+
+Descripción: Gestión patrimonial para personas de alto patrimonio neto.
+
+SITUACION ACTUAL (Diciembre 2025):
+- AUM total: USD 20 millones
+- Clientes activos: 350
+- AUM promedio por cliente: USD 57,000
+- Estado: Activa y en expansión
+
+SEGMENTACION DE CLIENTES:
+
+| Segmento   | Patrimonio      | Comisiones        | Servicios                          |
+|------------|-----------------|-------------------|------------------------------------|
+| Inicial    | < USD 50K       | Fee FCI + 0.5%    | FCI Hard Dollar + Transaccional    |
+| Estándar   | USD 50K-100K    | Fee FCI + 0.5%    | FCI + Bonos + CEDEARs + Acciones   |
+| Preferente | USD 100K-500K   | Fee FCI + 0.5%    | Todos + Estrategias ad-hoc         |
+| Premium    | USD 500K-5M     | Fee FCI + 0.25%   | Todos + Express Line + ONs         |
+| Private    | > USD 5M        | Fee FCI + 0.15%   | Todos + Acceso socios directos     |
+
+FOCO 2026: Segmento Preferente (dueños de PyMEs, USD 100K-500K)
+
+PRODUCTOS BANCA PRIVADA:
+- Fondos Comunes de Inversión (FCI Hard Dollar)
+- Compra-venta de dólares (transaccional)
+- Bonos argentinos y extranjeros
+- CEDEARs
+- Acciones
+- Cauciones
+- Operatoria offshore via acuerdo con Insigneo (Uruguay)
+
+CANALES DE CAPTACION:
+1. Derivados de corporativos (clientes PyME/Empresas)
+2. Referidos de socios
+3. Contactos de socios
+4. Captación directa
+
+--------------------------------------------------------------------------------
+3.2 EXPRESS LINE (Offshore)
+--------------------------------------------------------------------------------
+
+Descripción: Unidad de negocios offshore especializada en inversiones
+internacionales para clientes latinoamericanos de alto patrimonio.
+
+SITUACION ACTUAL (Diciembre 2025):
+- AUM total: USD 2,200,000
+- Clientes activos: 3 (Arve, CAZFE, Ben Porat)
+- AUM promedio por cliente: USD 733,333
+- Estado: Pre-lanzamiento, en desarrollo de plan estratégico
+
+MODELO OPERATIVO:
+- Express Line actúa como referente/introductor de Insigneo (broker Uruguay)
+- Pershing/BNY Mellon como custodio
+- Revenue neto: ~0.82% sobre AUM
+
+METAS 2026:
+- Conservador: USD 15M AUM (17 clientes nuevos)
+- Base: USD 35M AUM (43 clientes nuevos)
+- Optimista: USD 55M AUM (68 clientes nuevos)
+
+SEGMENTACION EXPRESS LINE:
+
+| Segmento | Patrimonio      | Fee Inicial | Fee Anual |
+|----------|-----------------|-------------|-----------|
+| Core     | USD 150K-500K   | 0.5%        | 0.75%     |
+| Premium  | USD 500K-2M     | 0.35%       | 0.75%     |
+| Private  | > USD 2M        | 0.25%       | 0.75%     |
+
+PRODUCTOS EXPRESS LINE:
+- Cuenta Brokerage (0.5% por operación)
+- Portafolio AIS (fondos acumulativos, retorno objetivo ~7% anual)
+- Estructuras Nevis (NBCO, NBST via ex-Trident Trust)
+- Cuenta bancaria First Citizens (Miami)
+- Reportes NETX360
+- Cuenta Fee-Based (casos especiales)
+
+BROKER PARTNER:
+- Insigneo (Uruguay) - Payout 75% a Express Line
+- Custodio: Pershing LLC / BNY Mellon (EE.UU.)
+
+--------------------------------------------------------------------------------
+3.3 CORPORATIVOS / PyMEs
+--------------------------------------------------------------------------------
+
+Descripción: Servicios para empresas medianas (PyMEs)
+
+CARACTERISTICAS:
+- Descuento de cheques
+- Financiamiento
+- Operatoria transaccional
+- Base de clientes: 65+ empresas activas
+- Gestión: Federico Fazzari
+
+CLIENTES PRINCIPALES (Muestra):
+- BOLSAPEL SAICIFYA (USD 7.95M)
+- BARBARELLA S.A. (USD 2.15M)
+- LAS BLONDAS S.A. (USD 1.26M)
+- SAN MARTIN EXPRESS S.A. (USD 928K)
+
+--------------------------------------------------------------------------------
+3.4 VETAFLAT (Plataforma para Traders)
+--------------------------------------------------------------------------------
+
+Descripción: Plataforma de trading con comisiones cero para operadores activos.
+Slogan: "La mejor alternativa para traders"
+
+PLANES VETAFLAT:
+
+| Plan         | Costo Mensual      | Descubierto                | Perfil              |
+|--------------|--------------------|-----------------------------|---------------------|
+| Flat Start   | $85,000 + IVA      | 150% del portfolio (máx $80M)  | Operadores frecuentes |
+| Flat Advance | $160,000 + IVA     | 230% del portfolio (máx $180M) | Traders activos      |
+| Flat Elite   | $285,000 + IVA     | 320% del portfolio (máx $500M) | Traders profesionales|
+
+CARACTERISTICAS VETAFLAT:
+- 0% comisiones en la mayoría de operaciones
+- Descubiertos en pesos y dólares
+- Apertura de cuenta online en el día
+- Grupo privado de WhatsApp para miembros
+
+
+================================================================================
+                              4. CLIENTES
+================================================================================
+
+BASE TOTAL DE CLIENTES:
+- Clientes Banca Privada: ~350 activos
+- Clientes Corporativos/PyME: ~65 empresas
+- Clientes Express Line: 3 (en expansión)
+
+TENENCIAS TOTALES (muestra corporativos): USD 14.5+ millones
+
+ARQUETIPOS DE CLIENTES BANCA PRIVADA (Segmento Preferente - Foco 2026):
+
+1. DUEÑO DE PyME (40-60 años)
+   - Patrimonio: USD 100K-500K
+   - Origen: Ya opera con Vetacap por su empresa
+   - Experiencia inversora: Nula a básica
+   - Necesita: Tranquilidad, honestidad, respuesta rápida
+
+2. REFERIDO DEL SOCIO (35-55 años)
+   - Patrimonio: USD 100K-500K+
+   - Origen: Círculo social/profesional de socios
+   - Experiencia inversora: Básica a intermedia
+   - Característica: Confianza alta, decisión rápida
+
+3. EMPLEADO EN RELACION DE DEPENDENCIA (40-60 años)
+   - Patrimonio: USD 100K-500K
+   - Origen: Recomendación o búsqueda propia
+   - Experiencia inversora: Nula a básica
+   - Característica: Proceso gradual, necesita educación
+
+
+================================================================================
+                        5. PROPUESTA DE VALOR
+================================================================================
+
+LOS 4 PILARES VETACAP (Comunicación Externa):
+
+1. INVERSIONES PERSONALIZADAS
+   - Priorizamos las interacciones personales
+   - Acompañamiento continuo al cliente
+
+2. ENFOQUE ESTRATEGICO
+   - Identificación de oportunidades
+   - Gestión activa de riesgos
+   - Maximización de resultados financieros
+
+3. SOPORTE CONTINUO
+   - Asesoramiento en todas las etapas
+   - Disponibilidad permanente
+
+4. EXCELENCIA Y EFECTIVIDAD
+   - Gestión sólida de portafolios
+   - Análisis exhaustivo de mercados
+
+--------------------------------------------------------------------------------
+
+LOS 5 COMPORTAMIENTOS VETACAP (Cultura Interna):
+
+1. RESPONDEMOS RAPIDO
+   - Private: < 1 hora
+   - Premium: < 2 horas hábiles
+   - Preferente: < 4 horas hábiles
+   - Estándar/Inicial: < 24 horas hábiles
+
+2. NOS ANTICIPAMOS
+   - Llamamos antes de que el cliente pregunte
+   - Avisamos vencimientos con 7 días de anticipación
+   - Comunicamos cambios regulatorios proactivamente
+
+3. NO CHAMUYAMOS
+   - Nunca prometemos rendimientos específicos
+   - Explicamos escenarios realistas
+   - Reconocemos cuando no sabemos algo
+
+4. NOS HACEMOS CARGO
+   - Reconocemos errores inmediatamente
+   - Buscamos soluciones, no culpables
+   - Seguimiento hasta resolución completa
+
+5. HABLAMOS COMO PARES
+   - Sin jerga financiera innecesaria
+   - Sin posición de superioridad
+   - Escuchamos más de lo que hablamos
+
+DIFERENCIAL VS. BANCOS GRANDES:
+- Mismo ejecutivo siempre (no rotativo)
+- Relación personal, no por ticket
+- Estrategia personalizada vs. productos empaquetados
+- Respuesta en horas vs. días
+- Reuniones cuando necesitas vs. formales programadas
+- Acceso a personas que deciden
+
+
+================================================================================
+                         6. METRICAS Y KPIs 2026
+================================================================================
+
+KPIs TIER 1 (Críticos):
+- AUM total (actual USD 20M)
+- Clientes activos (actual 350)
+- Revenue mensual
+
+KPIs TIER 2 (Muy Importantes):
+- AUM por segmento (meta: Preferente > 50%)
+- AUM promedio por cliente (actual ~USD 57K, meta USD 100K+)
+- AUM en FCI Hard Dollar
+- % participación BP en FCI
+
+KPIs TIER 3 (Actividad Comercial):
+- Leads generados
+- Reuniones comerciales
+- Aperturas de cuenta
+- AUM traído (nuevos clientes)
+
+KPIs TIER 4 (Monitoreo):
+- Clientes en FCI Hard Dollar
+- Cross-selling (2+ productos)
+- Tasa de retención (meta: > 90%)
+- Nuevos clientes/mes
+
+
+================================================================================
+                    7. INFRAESTRUCTURA Y TECNOLOGIA
+================================================================================
+
+SISTEMAS CORE:
+- CRM: Zoho CRM (implementado)
+- Core de Sociedad de Bolsa: Gallo (actual), Aune (futuro)
+- Trading: Fix, Matriz
+- Broker Partner: Insigneo (Uruguay)
+- Custodio: Pershing LLC / BNY Mellon
+
+PLATAFORMAS DE ACCESO CLIENTES:
+- NETX360 (reportes y posiciones)
+- First Citizens (cuenta bancaria Miami)
+- Portales web (en desarrollo)
+
+PROYECTOS EN DESARROLLO:
+
+1. PrivateDesk
+   - Plataforma web de gestión de clientes para Banca Privada
+   - Stack: Next.js, TypeScript, Tailwind CSS
+
+2. MCP Server Vetacap
+   - Gateway unificado para integración de sistemas via IA
+   - Permite interactuar con sistemas usando lenguaje natural
+
+3. RebalanceoCarteras
+   - Herramienta de rebalanceo automático de carteras
+
+4. ResearchAgent
+   - Agente de IA para investigación y análisis de mercado
+
+
+================================================================================
+                   8. CATALOGO DE PRODUCTOS (Detalle Web)
+================================================================================
+
+PRODUCTOS DE INVERSION:
+--------------------------------------------------------------------------------
+
+1. BONOS
+   - Instrumentos de deuda emitidos por gobiernos nacionales y locales
+   - Pagos de intereses periódicos
+   - Reembolso del capital al vencimiento
+
+2. LETRAS
+   - Instrumentos de corto plazo (30 días a 1 año)
+   - Emitidos por gobiernos y entidades financieras
+   - Rentabilidad fija y segura
+
+3. OBLIGACIONES NEGOCIABLES (ONs)
+   - Títulos de deuda empresarial
+   - Rentabilidad fija o variable
+   - Negociables en mercados secundarios
+
+4. CEDEARs Y ACCIONES
+   - Participaciones accionarias locales e internacionales
+   - Diversificación geográfica de cartera
+   - Acceso a mercados globales
+
+5. CAUCION BURSATIL
+   - Activo financiero como garantía para préstamo corto plazo
+   - Liquidez rápida
+   - Operación segura
+
+6. DERIVADOS (FUTUROS Y OPCIONES)
+   - Gestión de riesgos
+   - Especulación sobre movimientos de precios
+   - Cobertura de posiciones
+
+7. FONDOS COMUNES DE INVERSION (FCI)
+   - Activos diversos administrados por profesionales
+   - Análisis especializado de mercados
+   - FCI Hard Dollar disponibles
+
+SOLUCIONES DE FINANCIAMIENTO PARA EMPRESAS:
+--------------------------------------------------------------------------------
+- Cauciones para liquidez rápida
+- Facturas, cheques y Echeqs (financiamiento corto plazo)
+- Pagarés
+- Obligaciones Negociables
+- Instrumentos PyME con tasas y plazos competitivos
+
+
+================================================================================
+                      9. PARTNERS Y ALIANZAS
+================================================================================
+
+BROKER INTERNACIONAL:
+- Insigneo (Uruguay) - Partner principal para Express Line
+
+CUSTODIOS:
+- Pershing LLC / BNY Mellon - Custodia internacional
+
+PROVEEDORES DE SERVICIOS:
+- ex-Trident Trust (Ana Ortiz) - Estructuras Nevis/BVI
+- AIS - Fondos acumulativos
+
+FONDOS MUTUOS DISPONIBLES:
+- PIMCO
+- Schroder
+- Nomura
+- Neuberger Berman
+- Y otros
+
+RESEARCH/DATOS:
+- Bloomberg
+- Hedgeye
+- AIS Research
+
+
+================================================================================
+                      10. CONTEXTO REGULATORIO
+================================================================================
+
+REGULADORES:
+- CNV (Comisión Nacional de Valores)
+- UIF (Unidad de Información Financiera)
+
+CONSIDERACIONES:
+- Documentación KYC completa para todos los clientes
+- Procesos de aprobación para operaciones
+- Cumplimiento OWASP en sistemas digitales
+- Auditoría de todas las acciones en sistemas
+
+
+================================================================================
+                         11. RESUMEN EJECUTIVO
+================================================================================
+
+VETACAP es una sociedad de bolsa argentina moderna y orientada al cliente
+que opera en tres segmentos principales:
+
+1. BANCA PRIVADA: Gestión patrimonial para personas de alto patrimonio
+   (USD 100K-5M+), con 350 clientes activos y USD 20M AUM.
+   Enfoque 2026: Segmento Preferente (dueños de PyMEs).
+
+2. EXPRESS LINE: Plataforma offshore de inversiones internacionales,
+   operando con partner Insigneo (Uruguay).
+   Objetivo 2026: USD 15-55M AUM según escenario.
+
+3. CORPORATIVOS/PyMEs: Servicios transaccionales y financiamiento para
+   empresas medianas. 65+ clientes activos.
+
+DIFERENCIADORES CLAVE:
+- Modelo de servicio basado en honestidad, anticipación y cercanía
+- Respuesta rápida (< 4 horas para Preferente)
+- Relación personalizada vs. transaccional
+- Acceso a personas que deciden
+- Operatoria local + offshore integrada
+
+DESAFIOS 2026:
+- Escalamiento de equipo comercial
+- Aumento de AUM en ambas áreas
+- Implementación de tecnología (PrivateDesk, MCP Server)
+- Formalización de procesos
+
+OPORTUNIDADES 2026:
+- Crecimiento orgánico de Banca Privada
+- Expansión de Express Line
+- Automatización de procesos vía IA
+- Cross-selling entre áreas
+
+
+================================================================================
+                    FIN DEL DOCUMENTO DE CONTEXTO
+================================================================================
